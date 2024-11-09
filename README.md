@@ -2,8 +2,7 @@
 SQL Pagination/Sorting by Good practises Outsystems
 ![image](https://github.com/user-attachments/assets/aad012da-29d7-41ae-b128-b73e6a36f542)
 
-
-
+<br>
 Solution working on a server/client model type of app
 
 
