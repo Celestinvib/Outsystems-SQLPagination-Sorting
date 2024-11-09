@@ -77,41 +77,24 @@ FETCH FIRST @MaxRecords ROWS ONLY;
 Needed variable <i>@TotalCount</i> & output structure with only an integer
 
 <h4>Main Select without the orderby/pagination</h4>
+  
+        SELECT
+        {Entity}.[Field1],
+        {Entity}.[Field2] + '-' +  {Entity}.[Field3] as FieldCombined
+        {Entity}.[Field4]
 
- <div class="preview-container">
-SELECT
-
-{Entity}.[Field1],
-
-{Entity}.[Field2] + ' - ' + {Enity}.[Field3] as FieldCombined,
-
-{Entity}.[Field4]
-
-from {Entity}
-
-where
-
-{Entity}.[Field1] = @someOtherInput
-</div>
-
- 
+         FROM {Entity}
+         WHERE  {Entity}.[Field2] = @SomeOtherInput
 
 <h4>SELECT_COUNT (Get the total count of the select)</h4>
 
-<div>
-SELECT COUNT (1)
 
---rest of the select without sorting or pagination
-
-from {Entity}
-
-where
-
-{Entity}.[Field1] = @someOtherInput
-</div>
+         SELECT COUNT (1) 
+         FROM {Entity}
+         WHERE  {Entity}.[Field2] = @SomeOtherInput
  
 
-Visual Structure of the action:
+<h4>Visual Structure of the action:</h4>
 
 
 ![image](https://github.com/user-attachments/assets/56ba637c-4961-47ea-8e4b-ae4adb6efba7)
