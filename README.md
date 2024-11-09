@@ -1,5 +1,6 @@
 # Outsystems-SQLPagination-Sorting
 SQL Pagination/Sorting by Good practises Outsystems
+![image](https://github.com/user-attachments/assets/aad012da-29d7-41ae-b128-b73e6a36f542)
 
 Solution working on a server/client model type of app
 
@@ -23,7 +24,7 @@ And have in mind that is structure based solution.
 After where statement in case it's need it, add the following orderby section
 This is an acceptable approach but unwanted exceptions can appear
 
-## [Not Recommended Order By] ❗
+## ❗ [Not Recommended Order By] 
 
     ORDER BY
     CASE 
@@ -88,14 +89,11 @@ Needed variable <i>@TotalCount</i> & output structure with only an integer
          WHERE  {Entity}.[Field2] = @SomeOtherInput
  
 
-<h4>Visual Structure of the action:</h4>
+## 🌎 Visual Structure of the action:
 
 
 ![image](https://github.com/user-attachments/assets/56ba637c-4961-47ea-8e4b-ae4adb6efba7)
 
-<br>
-<br>
- ![image](https://github.com/user-attachments/assets/bb8201ca-a84b-4282-8a74-b0b60b471698)
 
 
 
