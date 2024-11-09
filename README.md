@@ -27,7 +27,7 @@ And have in mind that is structure based solution.
 After where statement in case it's need it, add the following orderby section
 This is an acceptable approach but unwanted exceptions can appear
 
-<h3>Not Recommended Order By</h3>
+<h3>[Not Recommended Order By]</h3>
 
     ORDER BY
     CASE 
@@ -44,7 +44,7 @@ To avoid it, In case of error when combining fields different cases will solve t
 
  
 
-<H3>Recommended Order By</H3>
+<H3>[Recommended Order By]</H3>
 
     ORDER BY
     CASE WHEN @OrderBy = 'Field1' THEN {Entity}.[Field1] END DESC,
@@ -55,7 +55,7 @@ To avoid it, In case of error when combining fields different cases will solve t
 
     --DESC (if need it)          
 
-<h3>Pagination after orderby</h3>
+<h3>[Pagination after orderby]</h3>
 
 OFFSET @StartIndex ROWS
 
@@ -72,13 +72,13 @@ FETCH FIRST @MaxRecords ROWS ONLY;
     OFFSET @StartIndex ROWS
     FETCH FIRST @MaxRecords ROWS ONLY;
 
-<h3> Query total count </h3>
+<h3>[Query total count]</h3>
 
 Needed variable <i>@TotalCount</i> & output structure with only an integer
 
 <h4>Main Select without the orderby/pagination</h4>
 
-<div>
+ <div class="preview-container">
 SELECT
 
 {Entity}.[Field1],
