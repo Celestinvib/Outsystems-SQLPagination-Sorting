@@ -61,7 +61,7 @@ OFFSET @StartIndex ROWS
 
 FETCH FIRST @MaxRecords ROWS ONLY;
 
-<h3><u>Good practises example OrderBy + Pagination </u></h3>
+<h3><u>Good practises example OrderBy + Pagination ✔ </u></h3>
 
      ORDER BY
     CASE WHEN @OrderBy = 'Field1' THEN {Entity}.[Field1] END DESC,
