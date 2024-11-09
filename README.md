@@ -1,9 +1,6 @@
 # Outsystems-SQLPagination-Sorting
 SQL Pagination/Sorting by Good practises Outsystems
 
- ![image](https://github.com/user-attachments/assets/bb8201ca-a84b-4282-8a74-b0b60b471698)
-
-
 Solution working on a server/client model type of app
 
 
@@ -12,7 +9,6 @@ The sorting will be separed in two queries one ASC the other DESC to avoid using
 to know what query need to be executed know.
 Server actions output variables like QueryList or TotalCount need it.
  
-
 <i>Needed inputs:</i>
 <ul>
  <li>@OrderBy  (Text)</li>
@@ -42,7 +38,6 @@ This is an acceptable approach but unwanted exceptions can appear
 
 To avoid it, In case of error when combining fields different cases will solve the problem because unwanted conversation of the diffierent fields will be avoided
 
- 
  ## ⚙ [Recommended Order By]
 
     ORDER BY
@@ -54,7 +49,7 @@ To avoid it, In case of error when combining fields different cases will solve t
 
     --DESC (if need it)          
 
-<h3>[Pagination after orderby]</h3>
+##  📖 [Pagination after orderby]
 
 OFFSET @StartIndex ROWS
 
@@ -98,6 +93,9 @@ Needed variable <i>@TotalCount</i> & output structure with only an integer
 
 ![image](https://github.com/user-attachments/assets/56ba637c-4961-47ea-8e4b-ae4adb6efba7)
 
+<br>
+<br>
+ ![image](https://github.com/user-attachments/assets/bb8201ca-a84b-4282-8a74-b0b60b471698)
 
 
 
