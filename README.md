@@ -27,7 +27,7 @@ And have in mind that is structure based solution.
 After where statement in case it's need it, add the following orderby section
 This is an acceptable approach but unwanted exceptions can appear
 
-<h3>[Not Recommended Order By]</h3>
+## [Not Recommended Order By] ❗
 
     ORDER BY
     CASE 
@@ -43,8 +43,7 @@ This is an acceptable approach but unwanted exceptions can appear
 To avoid it, In case of error when combining fields different cases will solve the problem because unwanted conversation of the diffierent fields will be avoided
 
  
-
-<H3>[Recommended Order By]</H3>
+ ## ⚙ [Recommended Order By]
 
     ORDER BY
     CASE WHEN @OrderBy = 'Field1' THEN {Entity}.[Field1] END DESC,
