@@ -78,7 +78,7 @@ Needed variable <i>@TotalCount</i> & output structure with only an integer
 
 <h4>Main Select without the orderby/pagination</h4>
 
-<div style="border:1px black">
+<div style="  border: 1px solid black; background: dimgray; color:white; padding: 2px;">
  
 SELECT
 
@@ -99,7 +99,7 @@ where
 
 <h4>SELECT_COUNT (Get the total count of the select)</h4>
 
-<div style="border:1px black">
+<div style="  border: 1px solid black; background: dimgray; color:white; padding: 2px;">
 SELECT COUNT (1)
 
 --rest of the select without sorting or pagination
