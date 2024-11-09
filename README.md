@@ -14,15 +14,12 @@ Server actions output variables like QueryList or TotalCount need it.
 
  
 
-Needed inputs:
-
-@OrderBy  (Text)
-
-@StartIndex (Integer)
-
-@MaxRecords (Integer)
-
- 
+<i>Needed inputs:</i>
+<ul>
+ <li>@OrderBy  (Text)</li>
+ <li>@StartIndex (Integer)</li>
+ <li>@MaxRecords (Integer)</li>
+</ul>
 
 After where statement in case it's need it
 
