@@ -61,7 +61,7 @@ OFFSET @StartIndex ROWS
 
 FETCH FIRST @MaxRecords ROWS ONLY;
 
-<h3><u>Good practises example OrderBy + Pagination ✔ </u></h3>
+ ##  Good practises example OrderBy + Pagination ✔ 
 
      ORDER BY
     CASE WHEN @OrderBy = 'Field1' THEN {Entity}.[Field1] END DESC,
@@ -72,7 +72,7 @@ FETCH FIRST @MaxRecords ROWS ONLY;
     OFFSET @StartIndex ROWS
     FETCH FIRST @MaxRecords ROWS ONLY;
 
-<h3>[Query total count]</h3>
+## 📑 [Query total count]
 
 Needed variable <i>@TotalCount</i> & output structure with only an integer
 
