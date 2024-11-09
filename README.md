@@ -66,7 +66,7 @@ And have in mind that is structure based solution.
 
  
 
-<i>Good practises example:</i>
+<h3><u>Good practises example:</u></3>
 
 order by
 
@@ -84,7 +84,7 @@ FETCH FIRST @MaxRecords ROWS ONLY;
 
 <h3> Query total count </h3>
 
-Needed variable TotalCount & output structure with only an integer
+Needed variable <i>@TotalCount</i> & output structure with only an integer
 
  
 Normal select without the orderby/pagination
@@ -105,7 +105,6 @@ where
 
  
 
- 
 in the SELECT_COUNT (Get the total count of the select)
 
 SELECT COUNT (1)
