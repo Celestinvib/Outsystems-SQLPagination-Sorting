@@ -11,7 +11,6 @@ The sorting will be separed in two queries one ASC the other DESC to avoid using
 
 to know what query need to be executed know.
 Server actions output variables like QueryList or TotalCount need it.
-
  
 
 <i>Needed inputs:</i>
@@ -21,15 +20,17 @@ Server actions output variables like QueryList or TotalCount need it.
  <li>@MaxRecords (Integer)</li>
 </ul>
 
-After where statement in case it's need it
-
  
+With this method is important to let the inputs set as expand in line no, to avoid SQL Injections
+And have in mind that is structure based solution.
 
+After where statement in case it's need it, add the following orderby section
 This is an acceptable approach but unwanted exceptions can appear
 
 <h3>Not Recommended Order By</h3>
 
-    CASE
+    ORDER BY
+    CASE 
 
         WHEN @OrderBy = 'x' THEN {Enitity}.[field]
 
@@ -45,6 +46,7 @@ To avoid it, In case of error when combining fields different cases will solve t
 
 <H3>Recommended Order By</H3>
 
+    ORDER BY
     CASE WHEN @OrderBy = 'Field1' THEN {Entity}.[Field1] END DESC,
 
     CASE WHEN @OrderBy = 'FieldCombined' THEN {Entity}.[Field2] + ' - ' + {Enity}.[Field3] END DESC,
@@ -59,36 +61,25 @@ OFFSET @StartIndex ROWS
 
 FETCH FIRST @MaxRecords ROWS ONLY;
 
- 
+<h3><u>Good practises example OrderBy + Pagination </u></h3>
 
-With this method is important to let the inputs set as expand in line no, to avoid SQL Injections
-And have in mind that is structure based solution.
+     ORDER BY
+    CASE WHEN @OrderBy = 'Field1' THEN {Entity}.[Field1] END DESC,
 
- 
+    CASE WHEN @OrderBy = 'FieldCombined' THEN {Entity}.[Field2] + ' - ' + {Enity}.[Field3] END DESC,
 
-<h3><u>Good practises example:</u></3>
-
-order by
-
-    CASE WHEN @OrderBy = 'Field1' THEN {Entity}.[Field1] END,
-
-    CASE WHEN @OrderBy = 'FieldCombined' THEN {Entity}.[Field2] + ' - ' + {Enity}.[Field3] END,
-
-    CASE WHEN @OrderBy = 'Field4' THEN CAST({Enituty}.[Field4] AS INT) END, --this field is set as text but it's a number
-
-OFFSET @StartIndex ROWS
-
-FETCH FIRST @MaxRecords ROWS ONLY;
-
- 
+    CASE WHEN @OrderBy = 'Field4' THEN CAST({Entity}.[Field4] AS INT) END DESC, --this field is set as text but it's a number
+    OFFSET @StartIndex ROWS
+    FETCH FIRST @MaxRecords ROWS ONLY;
 
 <h3> Query total count </h3>
 
 Needed variable <i>@TotalCount</i> & output structure with only an integer
 
- 
-Normal select without the orderby/pagination
+<h4>Main Select without the orderby/pagination</h4>
 
+<div style="border:1px black">
+ 
 SELECT
 
 {Entity}.[Field1],
@@ -102,11 +93,13 @@ from {Entity}
 where
 
 {Entity}.[Field1] = @someOtherInput
+</div>
 
  
 
-in the SELECT_COUNT (Get the total count of the select)
+<h4>SELECT_COUNT (Get the total count of the select)</h4>
 
+<div style="border:1px black">
 SELECT COUNT (1)
 
 --rest of the select without sorting or pagination
@@ -116,7 +109,7 @@ from {Entity}
 where
 
 {Entity}.[Field1] = @someOtherInput
-
+</div>
  
 
 Visual Structure of the action:
