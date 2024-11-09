@@ -27,7 +27,7 @@ After where statement in case it's need it
 
 This is an acceptable approach but unwanted exceptions can appear
 
-order by
+<h3>Not Recommended Order By</h3>
 
     CASE
 
@@ -43,7 +43,7 @@ To avoid it, In case of error when combining fields different cases will solve t
 
  
 
-order by
+<H3>Recommended Order By</H3>
 
     CASE WHEN @OrderBy = 'Field1' THEN {Entity}.[Field1] END DESC,
 
@@ -53,7 +53,7 @@ order by
 
     --DESC (if need it)          
 
-[Pagination after orderby]
+<h3>Pagination after orderby</h3>
 
 OFFSET @StartIndex ROWS
 
@@ -61,15 +61,12 @@ FETCH FIRST @MaxRecords ROWS ONLY;
 
  
 
-with this method is important to let the inputs set as expand in line no, to avoid SQL Injections
-
+With this method is important to let the inputs set as expand in line no, to avoid SQL Injections
 And have in mind that is structure based solution.
 
  
 
-Good practises example:
-
- 
+<i>Good practises example:</i>
 
 order by
 
@@ -85,12 +82,11 @@ FETCH FIRST @MaxRecords ROWS ONLY;
 
  
 
-[Query total count]
+<h3> Query total count </h3>
 
 Needed variable TotalCount & output structure with only an integer
 
  
-
 Normal select without the orderby/pagination
 
 SELECT
@@ -110,7 +106,6 @@ where
  
 
  
-
 in the SELECT_COUNT (Get the total count of the select)
 
 SELECT COUNT (1)
@@ -125,7 +120,7 @@ where
 
  
 
-Visual Structure:
+Visual Structure of the action:
 
 
 ![image](https://github.com/user-attachments/assets/56ba637c-4961-47ea-8e4b-ae4adb6efba7)
